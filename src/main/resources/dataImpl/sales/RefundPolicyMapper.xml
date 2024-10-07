@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cinema.data.sales.RefundPolicyMapper">
+    <insert id="insertRefundPolicy" parameterType="com.example.cinema.po.RefundPolicy"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into RefundPolicy(movie_id,movie_name,time_limit,start_time,end_time,rate)
+        values(#{movieId},#{movieName},#{timeBefore},#{startTime},#{endTime},#{rate})
+    </insert>
+
+    <select id="getAllPolicy" resultMap="RefundPolicy">
+        select * from RefundPolicy
+    </select>
+
+    <select id="selectPolicyById" resultMap="RefundPolicy">
+        select * from RefundPolicy where id=#{target}
+    </select>
+
+    <update id="updateRefundPolicy" parameterType="com.example.cinema.po.RefundPolicy">
+        update RefundPolicy set movie_id=#{movieId},movie_name=#{movieName},time_limit = #{timeBefore},start_time=#{startTime},end_time=#{endTime},rate=#{rate} where id=#{id}
+    </update>
+
+    <delete id="deleteRefundPolicy" parameterType="int">
+        delete from RefundPolicy where id=#{target_id}
+    </delete>
+
+    <resultMap id="RefundPolicy" type="com.example.cinema.po.RefundPolicy">
+        <result column="id" property="id"></result>
+        <result column="movie_id" property="movieId"></result>
+        <result column="movie_name" property="movieName"></result>
+        <result column="time_limit" property="timeBefore"></result>
+        <result column="start_time" property="startTime"></result>
+        <result column="end_time" property="endTime"></result>
+    </resultMap>
+
+</mapper>

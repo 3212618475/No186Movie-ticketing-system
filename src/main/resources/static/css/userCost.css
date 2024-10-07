@@ -1,0 +1,88 @@
+.table-wrapper {
+    padding: 20px;
+}
+.box{ width: 120px; height: 40px; background: #FFFFFF; border-radius: 40px; position: absolute; left: 50%; margin-left: -60px; top: 50%; margin-top: -20px; color: #FFFFFF; text-align: center; line-height: 40px; color: #0090FF; cursor: pointer;}
+.des{ width: 200px; height: 30px; position: absolute; left: 50%; margin-left: -100px; top: 50%; margin-top: -65px; background: #FFFFFF; color: #0090FF; border-radius: 30px; font-size: 12px; text-align: center; line-height: 30px; display: none;}
+.des span{ display: block; width: 0px; height: 0px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid #FFFFFF; position: absolute; left: 50%; bottom: -5px; margin-left: -2.5px;}
+
+.table-wrapper .table b {
+    color: #1caf9a;
+    font-size: 20px;
+}
+
+.table-wrapper .table td{
+    height: 60px;
+    vertical-align: middle;
+}
+
+.card {
+    padding: 30px 40px;
+    color: #444444;
+    margin-bottom: 40px;
+}
+
+.card .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0 5px 0;
+}
+
+.card .header .title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+/*	--------------------------------------------------
+	Reveal Modals
+	-------------------------------------------------- */
+
+.reveal-modal-bg {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    background: rgba(0,0,0,.8);
+    z-index: 100;
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+.reveal-modal {
+    visibility: hidden;
+    top: 100px;
+    left: 50%;
+    margin-left: -300px;
+    width: 520px;
+    background: #eee no-repeat -200px -80px;
+    position: absolute;
+    z-index: 101;
+    padding: 30px 40px 34px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    -box-shadow: 0 0 10px rgba(0,0,0,.4);
+}
+
+.reveal-modal.small 		{ width: 200px; margin-left: -140px;}
+.reveal-modal.medium 		{ width: 400px; margin-left: -240px;}
+.reveal-modal.large 		{ width: 600px; margin-left: -340px;}
+.reveal-modal.xlarge 		{ width: 800px; margin-left: -440px;}
+
+#panel,#flip
+{
+    padding:5px;
+    text-align:left;
+    background-color: #fcfcfc;
+    border:solid 1px #fcfcfc;
+}
+#panel
+{
+    padding:20px;
+    display:none;
+}
+

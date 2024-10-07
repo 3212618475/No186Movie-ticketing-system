@@ -1,0 +1,34 @@
+.refund-container {
+    display: flex;
+    width: 70%;
+    min-height: 200px;
+    margin: 20px 0;
+}
+.refund-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 70%;
+    justify-content: space-around;
+
+}
+
+.refund-line {
+    display: flex;
+    align-items: baseline;
+}
+
+.refund-coupon {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: #fff;
+    justify-content: space-around;
+
+}
+
+.refund-header {
+    display: flex;
+    justify-content: space-between;
+}

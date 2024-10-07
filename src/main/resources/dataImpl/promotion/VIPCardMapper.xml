@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cinema.data.promotion.VIPCardMapper">
+    <insert id="insertOneCard" parameterType="com.example.cinema.po.VIPCard"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into vip_card(user_id,username,balance,total)
+        values(#{userId},#{name}, #{balance},#{total})
+    </insert>
+
+    <insert id="addVIP_Strategy" parameterType="com.example.cinema.po.VIP_Strategy"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into vip_strategy(vip_strategy.charge_limit,vip_strategy.gift_amount)
+        values(#{chargeLimit},#{giftAmount})
+    </insert>
+
+    <select id="selectCardById" resultMap="VIPCard">
+        select * from vip_card where id=#{id}
+    </select>
+
+    <select id="selectAllVip" resultMap="VIPCard">
+        select * from vip_card
+    </select>
+
+    <select id="selectCardByUserId" resultMap="VIPCard">
+        select * from vip_card where user_id=#{userId}
+    </select>
+
+    <select id="getVIP_Strategy" resultMap="VIP_Strategy">
+        select * from vip_strategy
+    </select>
+
+    <select id="selectVIP_StrategyById" resultMap="VIP_Strategy">
+        select * from vip_strategy where id=#{id}
+    </select>
+
+    <resultMap id="VIPCard" type="com.example.cinema.po.VIPCard">
+        <result column="join_time" property="joinDate"></result>
+        <result column="id" property="id"></result>
+        <result column="user_id" property="userId"></result>
+        <result column="balance" property="balance"></result>
+        <result column="username" property="name"></result>
+        <result column="total" property="total"></result>
+    </resultMap>
+
+    <resultMap id="VIP_Strategy" type="com.example.cinema.po.VIP_Strategy">
+        <result column="id" property="id"></result>
+        <result column="charge_limit" property="chargeLimit"></result>
+        <result column="gift_amount" property="giftAmount"></result>
+    </resultMap>
+
+    <update id="updateCardBalance" >
+        update vip_card set balance = #{balance} where id=#{id}
+    </update>
+
+    <update id="updateCardTotal" >
+        update vip_card set total = #{total} where id=#{id}
+    </update>
+
+    <update id="changeVIP_Strategy">
+        update vip_strategy set charge_limit=#{chargeLimit},gift_amount=#{giftAmount}
+        where id=#{VIP_Strategy_ID}
+    </update>
+
+    <delete id="deleteVIP_Strategy">
+        delete from vip_strategy where id=#{VIP_Strategy_ID}
+    </delete>
+</mapper>

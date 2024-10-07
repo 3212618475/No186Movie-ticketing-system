@@ -1,0 +1,108 @@
+.strategy-container {
+    display: flex;
+    width: 50%;
+    min-height: 50px;
+    margin: 20px 0;
+}
+.strategy-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 70%;
+    justify-content: space-around;
+
+}
+
+.strategy-line {
+    display: flex;
+    align-items: baseline;
+}
+
+.strategy-coupon {
+    flex-basis: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: #fff;
+    justify-content: space-around;
+
+}
+
+.strategy-header {
+    display: flex;
+    justify-content: space-between;
+}
+.coupon-wrapper {
+    padding: 5px;
+}
+
+.coupon {
+    /* 相对定位，方便让before和after伪元素绝对定位偏移 */
+    position: relative;
+    overflow: hidden;
+    background: #1caf9a;
+    height: 120px;
+    width:50%;
+    margin: 5px;
+}
+
+.coupon:before, .coupon:after {
+    top: 10px;
+    content: ' ';
+    width: 0;
+    height: 100%;
+    /* 绝对定位进行偏移 */
+    position: absolute;
+}
+
+.coupon:before {
+    /* 圆点型的border */
+    border-right: 10px dotted white;
+    /* 偏移一个半径，让圆点的一半覆盖div */
+    left: -5px;
+}
+
+.coupon:after {
+    /* 圆点型的border */
+    border-left: 10px dotted white;
+    /* 偏移一个半径，让圆点的一半覆盖div */
+    right: -5px;
+}
+
+.coupon .content {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    color: white;
+    align-items: center;
+}
+
+.coupon .content .left {
+    display: flex;
+    flex-shrink: 0;
+    min-width: 50%;
+    flex-direction: column;
+    border-right: 2px dashed rgba(255,255,255,.3);
+}
+
+.coupon .content .left .name{
+    font-size: 16px;
+}
+
+.coupon .content .left .description{
+    font-size: 10px;
+    color: #f9d3a1;
+}
+
+.coupon .content .left .price{
+    font-size: 24px;
+}
+
+.coupon .content .right {
+    text-align: left;
+    color: #d2d2d2;
+}
+
+.notice {
+    margin-left: 12px;
+}
